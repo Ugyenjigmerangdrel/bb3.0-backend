@@ -29,7 +29,7 @@ if(isset($_GET['del_post'])){
     $count = deletePost($table, $post_url);
     $count2 = deletePost('category_linking', $post_url);
     $_SESSION['message'] = "Result Deleted Successfully";
-    header('location:'. $BASE_URL. "index.php");
+    header('location:'. $BASE_URL. "artics.php");
     exit();
 }
 
@@ -66,6 +66,7 @@ if(isset($_GET['u'])){
 }
 
 if (isset($_POST['submit_post'])){
+    //printD($_POST);
     //printD($_FILES['img']['name']); 
     //$errors = validateBlog($_POST);
     if (!empty($_FILES['img']['name'])){
@@ -110,14 +111,13 @@ if (isset($_POST['submit_post'])){
             unset($_POST['submit_post'],$_POST['category']);
             
             $_POST['published'] = 'not-published';
-            $_POST['category'] = 'ugyenjigmerangdrel';
             $_POST['post_content'] = htmlentities($_POST['post_content']);
         
             //printD($_POST);
             $post_id = create($table, $_POST);
             
             $_SESSION['message'] = "Post Created Successfully";
-            header('location:'. $BASE_URL. "index.php");
+            header('location:'. $BASE_URL. "artics.php");
             exit();
         }else{
 

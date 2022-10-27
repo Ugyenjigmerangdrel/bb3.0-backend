@@ -2,6 +2,8 @@
 include('path.php');
 
 include($ROOTPATH . '/app/controllers/category.php');
+
+$posts = selectAll('post')
 ?>
 
 <!DOCTYPE html>
@@ -156,11 +158,39 @@ include($ROOTPATH . '/app/controllers/category.php');
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        <h6>Google Drive</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+            
+                                                    <th>Post Title</th>
+                                                    <th>Published Status</th>
+                                                    <th>Author</th>
+                                                    <th>Posted On</th>
+                                                 
+                                                    <th>Action</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php foreach($posts as $key => $value): ?>
+                                                <tr>
+                                               
+                                                <td><?php echo $value['title'] ?></td>
+                                                
+                                                <td><a href="index.php?p=<?php echo $value['id'] ?>"><?php echo $value['published'] ?></a></td>
+                                                <td><?php echo $value['author'] ?></td>
+                                                <td><?php echo $value['created_on'] ?></td>
+                                                
+                                                <td><div><a href="" class="p-2 me-2 mb-3">Preview</a></div>
+                                                <div><a href="edit_post.php?u=<?php echo $value['url']?>" class="p-2 me-2 mb-3">Edit</a></div>
+                                            <div><a href="?del_post=<?php echo $value['url'] ?>" class="p-2 text-danger me-2 mb-3">Remove</a></div></td>
 
-                                        <h6>Reviews</h6>
-
-                                        <h6>Recommendations</h6>
+                                            </tr>
+                                            <?php endforeach ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

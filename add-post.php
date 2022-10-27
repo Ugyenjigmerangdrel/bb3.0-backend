@@ -104,10 +104,10 @@ include($ROOTPATH . '/app/controllers/post.php');
                                             <label for="">Author</label>
                                             <select name="author" class="form-control" id="" required>
                                                 <option value="">---</option>
-                                                <option value="">Ugyen Jigme Rangdrel</option>
-                                                <option value="">Jamyang Ugyen Tshomo</option>
-                                                <option value="">Shacha</option>
-                                                <option value="">Khamsum Wangchuk</option>
+                                                <option value="Ugyen Jigme Rangdrel">Ugyen Jigme Rangdrel</option>
+                                                <option value="Jamyang Ugyen Tshomo">Jamyang Ugyen Tshomo</option>
+                                                <option value="Shacha">Shacha</option>
+                                                <option value="Khamsum Wangchuk">Khamsum Wangchuk</option>
                                             </select>
                                         </div>
                                         <br>
