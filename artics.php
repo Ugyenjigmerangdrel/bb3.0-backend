@@ -5,6 +5,21 @@ include($ROOTPATH . '/app/controllers/category.php');
 
 $posts = selectAll('post');
 
+if(isset($_GET['p'])){
+    $post = selectOne('post', ['id'=>$_GET['p']]);
+    $pub = $post['published'];
+    
+    if ($pub == "unpublish"){
+        $_POST['published'] = 'publish';
+        update('post', $_GET['p'], $_POST);
+        header('location:'. $BASE_URL. "artics.php");
+    } else{
+        $_POST['published'] = 'unpublish';
+        update('post', $_GET['p'],  $_POST);
+        header('location:'. $BASE_URL. "artics.php");
+    }
+}
+
 if(isset($_GET['del_post'])){
     $post_url = $_GET['del_post'];
     $post = selectOne('post', ['url' => $post_url]);
@@ -201,7 +216,7 @@ if(isset($_GET['u'])){
                                                
                                                 <td><?php echo $value['title'] ?></td>
                                                 
-                                                <td><a href="index.php?p=<?php echo $value['id'] ?>"><?php echo $value['published'] ?></a></td>
+                                                <td><a href="artics.php?p=<?php echo $value['id'] ?>"><?php echo $value['published'] ?></a></td>
                                                 <td><?php echo $value['author'] ?></td>
                                                 <td><?php echo $value['created_on'] ?></td>
                                                 
@@ -240,13 +255,7 @@ if(isset($_GET['u'])){
                                            <th></th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
+                                
                                     <tbody>
                                     <?php foreach($categories as $key => $value): ?>
                                         <tr>

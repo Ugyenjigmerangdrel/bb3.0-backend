@@ -39,9 +39,8 @@
             <h6 class="collapse-header">Management:</h6>
             <a class="collapse-item" href="artics.php">Dashboard</a>
             <a class="collapse-item" href="add-post.php">Add Post</a>
-            <a class="collapse-item" href="cards.html">Edit Posts</a>
             <a class="collapse-item" href="add-category.php">Add Category</a>
-            <a class="collapse-item" href="buttons.html">Edit Category</a>
+         
         </div>
     </div>
 </li>
@@ -61,6 +60,23 @@
             <a class="collapse-item" href="utilities-border.html">Borders</a>
             <a class="collapse-item" href="utilities-animation.html">Animations</a>
             <a class="collapse-item" href="utilities-other.html">Other</a>
+        </div>
+    </div>
+</li>
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1"
+        aria-expanded="true" aria-controls="collapseUtilities1">
+        <i class="fas fa-user"></i>
+        <span>Authors</span>
+    </a>
+    <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Authors:</h6>
+            <a class="collapse-item" href="utilities-color.html">Dashboard</a>
+            <a class="collapse-item" href="utilities-border.html">Add Author</a>
         </div>
     </div>
 </li>
