@@ -45,6 +45,24 @@
     </div>
 </li>
 
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1"
+        aria-expanded="true" aria-controls="collapseUtilities1">
+        <i class="fas fa-user"></i>
+        <span>Team</span>
+    </a>
+    <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Team:</h6>
+            <a class="collapse-item" href="utilities-color.html">Dashboard</a>
+            <a class="collapse-item" href="utilities-border.html">Add Team</a>
+        </div>
+    </div>
+</li>
+
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -57,29 +75,11 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Courses:</h6>
             <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+          
         </div>
     </div>
 </li>
 
-<!-- Nav Item - Utilities Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1"
-        aria-expanded="true" aria-controls="collapseUtilities1">
-        <i class="fas fa-user"></i>
-        <span>Authors</span>
-    </a>
-    <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities"
-        data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Authors:</h6>
-            <a class="collapse-item" href="utilities-color.html">Dashboard</a>
-            <a class="collapse-item" href="utilities-border.html">Add Author</a>
-        </div>
-    </div>
-</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">

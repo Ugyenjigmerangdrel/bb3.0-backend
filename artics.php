@@ -3,7 +3,7 @@ include('path.php');
 
 include($ROOTPATH . '/app/controllers/category.php');
 
-$posts = selectAll('post');
+$posts = dispSort(['post', 'created_on', 'DESC']);
 
 if(isset($_GET['p'])){
     $post = selectOne('post', ['id'=>$_GET['p']]);
