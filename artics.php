@@ -1,3 +1,9 @@
+<?php 
+include('path.php');
+
+include($ROOTPATH . '/app/controllers/category.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,14 +149,18 @@
                                     <!-- Card Header - Dropdown -->
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Unpublished Posts</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Content Links</h6>
                                         <div class="dropdown no-arrow">
                                            
                                         </div>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        
+                                        <h6>Google Drive</h6>
+
+                                        <h6>Reviews</h6>
+
+                                        <h6>Recommendations</h6>
                                     </div>
                                 </div>
                             </div>
@@ -161,38 +171,45 @@
                                     <!-- Card Header - Dropdown -->
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Category</h6>
                                         <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <div class="dropdown-header">Dropdown Header:</div>
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        <div class="chart-pie pt-4 pb-2">
-                                            <canvas id="myPieChart"></canvas>
-                                        </div>
-                                        <div class="mt-4 text-center small">
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i> Direct
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i> Social
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i> Referral
-                                            </span>
-                                        </div>
+                                    <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                           <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <?php foreach($categories as $key => $value): ?>
+                                        <tr>
+                                     
+                                        <td><?php echo $value['category'] ?></td>
+                                        
+                                        <td><?php echo $value['cat_expand'] ?></td>
+                                        
+                                        <td><a href="?del_id=<?php echo $value['id'] ?>" class="p-2 me-2 mb-3"><i class="text-danger fa fa-trash"></i></a></td>
+
+                                    </tr>
+                                    <?php endforeach ?>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
                                     </div>
                                 </div>
                             </div>

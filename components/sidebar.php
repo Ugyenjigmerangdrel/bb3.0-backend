@@ -38,8 +38,9 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Management:</h6>
             <a class="collapse-item" href="artics.php">Dashboard</a>
+            <a class="collapse-item" href="add-post.php">Add Post</a>
             <a class="collapse-item" href="cards.html">Edit Posts</a>
-            <a class="collapse-item" href="buttons.html">Category</a>
+            <a class="collapse-item" href="add-category.php">Add Category</a>
             <a class="collapse-item" href="buttons.html">Edit Category</a>
         </div>
     </div>
