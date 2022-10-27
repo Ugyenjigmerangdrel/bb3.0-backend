@@ -1,3 +1,8 @@
+<?php 
+include('path.php');
+
+include($ROOTPATH . '/app/controllers/user.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

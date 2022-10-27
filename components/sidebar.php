@@ -57,8 +57,8 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Team:</h6>
-            <a class="collapse-item" href="utilities-color.html">Dashboard</a>
-            <a class="collapse-item" href="utilities-border.html">Add Team</a>
+            <a class="collapse-item" href="team.php">Dashboard</a>
+            <a class="collapse-item" href="add-team.php">Add Team</a>
         </div>
     </div>
 </li>
