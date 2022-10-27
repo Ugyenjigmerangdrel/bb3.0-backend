@@ -3,7 +3,31 @@ include('path.php');
 
 include($ROOTPATH . '/app/controllers/category.php');
 
-$posts = selectAll('post')
+$posts = selectAll('post');
+
+if(isset($_GET['del_post'])){
+    $post_url = $_GET['del_post'];
+    $post = selectOne('post', ['url' => $post_url]);
+    $path = $ROOTPATH . "/static/post/".$post['img'];
+    unlink($path);
+    $count = deletePost('post', $post_url);
+    $count2 = deletePost('category_linking', $post_url);
+    $_SESSION['message'] = "Result Deleted Successfully";
+    header('location:'. $BASE_URL. "artics.php");
+    exit();
+}
+
+if(isset($_GET['u'])){
+    $content_single = selectOne('post', ['url' => $_GET['u']]);
+
+    $id = $content_single['id'];
+    $title = $content_single['title'];
+    $p_url = $content_single['url'];
+    $p_description = $content_single['description'];
+    $data = str_replace( '&', '&amp;', $content_single['post_content'] );
+    $post = html_entity_decode($content_single['post_content']);
+    $file = $content_single['img'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -167,7 +191,6 @@ $posts = selectAll('post')
                                                     <th>Published Status</th>
                                                     <th>Author</th>
                                                     <th>Posted On</th>
-                                                 
                                                     <th>Action</th>
                                                     
                                                 </tr>
@@ -183,7 +206,7 @@ $posts = selectAll('post')
                                                 <td><?php echo $value['created_on'] ?></td>
                                                 
                                                 <td><div><a href="" class="p-2 me-2 mb-3">Preview</a></div>
-                                                <div><a href="edit_post.php?u=<?php echo $value['url']?>" class="p-2 me-2 mb-3">Edit</a></div>
+                                                <div><a href="edit-post.php?u=<?php echo $value['url']?>" class="p-2 me-2 mb-3">Edit</a></div>
                                             <div><a href="?del_post=<?php echo $value['url'] ?>" class="p-2 text-danger me-2 mb-3">Remove</a></div></td>
 
                                             </tr>

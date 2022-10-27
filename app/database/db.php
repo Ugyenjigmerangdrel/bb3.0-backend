@@ -1,6 +1,9 @@
 <?php
 session_start();
+
 require('connect.php');
+//include('middleware.php');
+//include($ROOTPATH . "/app/helpers/middleware.php");
 
 function executeQuery($sql, $data){
     global $conn;
@@ -49,6 +52,9 @@ function selectAll($table, $conditions = []){
         return $records;
     }
 }
+
+
+
 
 function selectOne($table, $conditions)//second parameter is compulsory
 { 
@@ -103,13 +109,15 @@ function delete($table, $id){
     return $stmt->affected_rows;
 }
 
-function deleteResult($table, $stu_code){
+function deletePost($table, $stu_code){
     global $conn;
-    $sql = "DELETE FROM $table WHERE student_code=?";
+    $sql = "DELETE FROM $table WHERE url=?";
 
-    $stmt = executeQuery($sql, ['student_code' => $stu_code]);
+    $stmt = executeQuery($sql, ['url' => $stu_code]);
     return $stmt->affected_rows;
 }
+
+
 
 function searchItem($term){
     $match = '%' . $term . '%';
@@ -176,5 +184,22 @@ function dispSort($table=[], $conditions = []){
 
         return $records;
     }
+
+}
+
+
+function url_encode($input)
+
+{
+
+return strtr(base64_encode($input), '+/=', '-_,');
+
+}
+
+function url_decode($input)
+
+{
+
+return base64_decode(strtr($input, '-_,', '+/='));
 
 }
