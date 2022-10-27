@@ -14,7 +14,7 @@ if(isset($_GET['del_id'])){
     $id = $_GET['del_id'];
     $count = delete($table, $id);
     $_SESSION['message'] = "Suject Deleted Successfully";
-    header('location:'. $BASE_URL. "add-category.php");
+    header('location:'. $BASE_URL. "artics.php");
     exit();
 }
 
@@ -35,7 +35,7 @@ if (isset($_POST['submit_category'])){
        $post_id = create($table, $_POST);
        
        $_SESSION['message'] = "Post Created Successfully";
-       header('location:'. $BASE_URL. "add-category.php");
+       header('location:'. $BASE_URL. "artics.php");
        exit();
     } else{
         $category = $_POST['category'];
@@ -55,7 +55,7 @@ if (isset($_POST['update_category'])){
        $post_id = update($table, $id, $_POST);
        
        $_SESSION['message'] = "Post Created Successfully";
-       header('location:'. $BASE_URL. "add-category.php");
+       header('location:'. $BASE_URL. "artics.php");
        exit();
     } else{
         $category = $_POST['category'];

@@ -264,7 +264,7 @@ if(isset($_GET['u'])){
                                         
                                         <td><?php echo $value['cat_expand'] ?></td>
                                         
-                                        <td><a href="?del_id=<?php echo $value['id'] ?>" class="p-2 me-2 mb-3"><i class="text-danger fa fa-trash"></i></a></td>
+                                        <td><a href="edit-category.php?u=<?php echo $value['id']?>" class="p-2 text-info me-2 mb-3"><i class="fa fa-pen"></i></a><a href="?del_id=<?php echo $value['id'] ?>" class="p-2 me-2 mb-3"><i class="text-danger fa fa-trash"></i></a></td>
 
                                     </tr>
                                     <?php endforeach ?>

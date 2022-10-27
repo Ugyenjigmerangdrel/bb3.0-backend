@@ -70,20 +70,21 @@ include($ROOTPATH . '/app/controllers/category.php');
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                    <form action="add-category.php" class="needs-validation" method="post" novalidate>
-                                        <div class="form-group">
-                                            <label for="">Category:</label>
-                                            <input type="text" name="category" value="<?php echo $category ?>" class="form-control" required>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <label for="">Description:</label>
-                                            <input type="text" name="cat_expand" value="<?php echo $cat_expand ?>" class="form-control" required>
-                                        </div>
-                                        <br>
-                                        
-                                        <button name="submit_category" class="btn btn-primary p-2">Submit Post</button>
-                                        </form>
+                                    <form action="edit-category.php" class="needs-validation" method="post" novalidate>
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="<?php echo $id ?>">
+                                        <label for="">Category:</label>
+                                        <input type="text" name="category" value="<?php echo $category ?>" class="form-control" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="">Description:</label>
+                                        <input type="text" name="cat_expand" value="<?php echo $cat_expand ?>" class="form-control" required>
+                                    </div>
+                                    <br>
+                                    
+                                    <button name="update_category" class="btn btn-primary p-2">Submit Post</button>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
