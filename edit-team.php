@@ -2,6 +2,7 @@
 include('path.php');
 
 include($ROOTPATH . '/app/controllers/author.php');
+adminOnly();
 ?>
 
 <!DOCTYPE html>

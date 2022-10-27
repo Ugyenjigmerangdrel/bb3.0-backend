@@ -2,7 +2,7 @@
 session_start();
 
 require('connect.php');
-//include('middleware.php');
+include('middleware.php');
 //include($ROOTPATH . "/app/helpers/middleware.php");
 
 function executeQuery($sql, $data){

@@ -2,6 +2,7 @@
 include('path.php');
 
 include($ROOTPATH . '/app/controllers/category.php');
+adminOnly();
 
 $posts = dispSort(['post', 'created_on', 'DESC']);
 
@@ -43,6 +44,7 @@ if(isset($_GET['u'])){
     $post = html_entity_decode($content_single['post_content']);
     $file = $content_single['img'];
 }
+
 ?>
 
 <!DOCTYPE html>

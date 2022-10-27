@@ -2,6 +2,7 @@
 include('path.php');
 
 include($ROOTPATH . '/app/controllers/user.php');
+adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">

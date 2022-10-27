@@ -2,6 +2,7 @@
 include('path.php');
 
 include($ROOTPATH . '/app/controllers/category.php');
+adminOnly();
 ?>
 
 <!DOCTYPE html>
