@@ -10,6 +10,7 @@ $authors = selectAll($table);
 $name = '';
 $description = '';
 $role = '';
+$img = '';
 if(isset($_GET['del_id'])){
     $id = $_GET['del_id'];
     $count = delete($table, $id);
@@ -24,6 +25,7 @@ if(isset($_GET['u'])){
     $name = $list['name'];
     $description = $list['description'];
     $role = $list['role'];
+    $img = $list['img'];
 }
 
 if (isset($_POST['submit_author'])){
@@ -42,7 +44,7 @@ if (isset($_POST['submit_author'])){
         $name = $_POST['name'];
         $description = $_POST['description'];
         $role = $_POST['role'];
-        
+        $img = $_POST['img'];
     }
 }
 
@@ -63,5 +65,6 @@ if (isset($_POST['update_author'])){
         $name = $_POST['name'];
         $description = $_POST['description'];
         $role = $_POST['role'];
+        $img = $_POST['img'];
     }
 }

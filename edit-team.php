@@ -88,6 +88,10 @@ adminOnly();
                                             <input type="text" name="role" value="<?php echo $role ?>" class="form-control" required>
                                         </div>
                                         <br>
+                                        <div class="form-group">
+                                            <label for="">Profile Image Url:</label>
+                                            <input type="text" name="img" value="<?php echo $img ?>" class="form-control" required>
+                                        </div>
                                         <button name="update_author" class="btn btn-primary p-2">Submit Post</button>
                                         </form>
                                     </div>
